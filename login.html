@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Online Learning</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#444444;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background-color:#686868;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            width: 350px;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .login-header {
+            background-color: #D4A373; 
+            color: white;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 8px 0;
+            text-align: center;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        button {
+            background-color: #D4A373; 
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 80%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #D4A373; 
+        }
+
+        .error-message {
+            color: #f44336;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h2>Login to Online Learning</h2>
+        </div>
+
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="button" onclick="validateLogin()" ><a href="index.html">login</a></button>
+
+            <div class="error-message" id="errorMessage"></div>
+        </form>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorMessage = document.getElementById("errorMessage");
+
+         
+            if (username === "admin" && password === "password") {
+                alert("Login successful!");
+            
+            } else {
+                errorMessage.textContent = "Invalid username or password. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
